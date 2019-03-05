@@ -1,4 +1,6 @@
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -10,14 +12,17 @@ public class GamePanel extends JPanel implements KeyListener {
 	JPanel menuPanel = new JPanel();
 	JPanel gamePanel = new JPanel();
 	JPanel endPanel = new JPanel();
+	Font titleFont;
+	Font subFont;
+	Graphics g;
 	public GamePanel() {
 		Snoose.frame.setVisible(true);
 		Snoose.frame.setSize(Snoose.width, Snoose.height);
-		drawMenuState();
-		menuPanel.addKeyListener(this);
-		gamePanel.addKeyListener(this);
-		endPanel.addKeyListener(this);
+		Snoose.frame.addKeyListener(this);
 		Snoose.frame.add(menuPanel);
+		titleFont = new Font("Zapfino", Font.PLAIN, 55);
+		subFont = new Font("PingFang HK", Font.PLAIN, 28);
+		drawMenuState();
 	}
 
 	public void updateMenuState() {
@@ -35,6 +40,8 @@ public class GamePanel extends JPanel implements KeyListener {
 	public void drawMenuState() {
 		menuPanel.setSize(Snoose.width, Snoose.height);
 		menuPanel.setBackground(new Color(255, 238, 170));
+		
+		
 	}
 
 	public void drawGameState() {
