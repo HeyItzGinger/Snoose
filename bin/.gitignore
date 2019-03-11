@@ -1,2 +1,6 @@
 /GamePanel.class
 /Snoose.class
+/Screen.class
+/MenuState.class
+/GameState.class
+/EndState.class

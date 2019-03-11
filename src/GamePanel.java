@@ -37,24 +37,7 @@ public class GamePanel extends JPanel implements KeyListener {
 
 	}
 
-	public void drawMenuState() {
-		menuPanel.setSize(Snoose.width, Snoose.height);
-		menuPanel.setBackground(new Color(255, 238, 170));
-		
-		
-	}
-
-	public void drawGameState() {
-		gamePanel.setSize(Snoose.width, Snoose.height);
-		gamePanel.setBackground(new Color(187, 187, 255));
-		Snoose.frame.add(gamePanel);
-	}
-
-	public void drawEndState() {
-		endPanel.setSize(Snoose.width, Snoose.height);
-		endPanel.setBackground(new Color(255, 238, 170));
-		Snoose.frame.add(endPanel);
-	}
+	
 
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -67,13 +50,13 @@ public class GamePanel extends JPanel implements KeyListener {
 		// TODO Auto-generated method stub
 		System.out.println("hi");
 		if (state == 0) {
-			drawMenuState();
+		
 		}
 		else if (state == 1) {
-			drawGameState();
+			
 		} 
 		else if (state == 2) {
-			drawEndState();
+			
 		}
 		if (e.getKeyCode() == KeyEvent.VK_ENTER && state == 0) {
 			Snoose.frame.getContentPane().removeAll();
