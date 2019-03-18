@@ -12,7 +12,7 @@ JLabel label;
 		// TODO Auto-generated constructor stub
 	}
 
-}
+
 public void drawMenuScreen() {
 	frame.add(panel);
 	panel.add(label);
