@@ -6,7 +6,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class GameState extends Screen {
-	JLabel hangmanImage;
+	JLabel hangmanImage1;
+	JLabel hangmanImage2;
 	JTextField text;
 	JButton answer;
 
@@ -21,6 +22,15 @@ public class GameState extends Screen {
 	public void drawGameScreen() {
 		frame.add(panel);
 		panel.setBackground(backgroundColor);
+		hangmanImage1 = createLabelImage("pixil-girl-0.png");
+		gc.gridx = 0;
+		gc.gridy = 0;
+		panel.add(hangmanImage1);
+		hangmanImage2 = createLabelImage("pixil-boy-0.png");
+		
+		gc.gridx = 0;
+		gc.gridy = 1;
+		panel.add(text)
 		
 
 	}
