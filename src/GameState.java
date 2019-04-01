@@ -1,11 +1,13 @@
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class GameState extends Screen {
+public class GameState extends Screen implements ActionListener {
 	JLabel hangmanImage1;
 	JLabel hangmanImage2;
 	JTextField text;
@@ -30,8 +32,21 @@ public class GameState extends Screen {
 		
 		gc.gridx = 0;
 		gc.gridy = 1;
-		panel.add(text)
+		panel.add(text);
 		
+		gc.gridx = 0;
+		gc.gridy = 2;
+		panel.add(answer);
+		
+		answer.addActionListener(this);
+		panel.repaint();
+		frame.pack();
 
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }

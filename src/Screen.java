@@ -27,7 +27,7 @@ public Screen(JFrame frame) {
 public JLabel createLabelImage(String file) {
 	URL imageURl = getClass().getResource(file);
 	if(imageURl == null) {
-		System.err.println("Could not fine image " + file);
+		System.err.println("Could not find image " + file);
 		return new JLabel();
 	}
 	Icon icon = new ImageIcon(imageURl);
