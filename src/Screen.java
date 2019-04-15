@@ -14,13 +14,11 @@ public class Screen {
 	JPanel panel;
 	Color backgroundColor;;
 	GridBagConstraints gc;
-	Dimension panelSize;
 	
 public Screen(JFrame frame) {
 	this.frame = frame;
 	panel = new JPanel();
 	gc = new GridBagConstraints();
-	panel.setSize(Snoose.width, Snoose.height);
 	frame.pack();
 	
 	}
@@ -33,5 +31,9 @@ public JLabel createLabelImage(String file) {
 	Icon icon = new ImageIcon(imageURl);
 	JLabel imageLabel = new JLabel(icon);
 	return imageLabel;
+}
+public void removeScreen() {
+	this.frame.getContentPane().remove(panel);
+	this.panel.removeAll();
 }
 }

@@ -10,14 +10,18 @@ JLabel label;
 		super(frame);
 		backgroundColor = new Color(255, 255, 187);
 		// TODO Auto-generated constructor stub
+		label = new JLabel();
 	}
+
 
 
 public void drawMenuScreen() {
 	frame.add(panel);
 	panel.add(label);
 	panel.setBackground(backgroundColor);
-	label.setFont(new Font( "Zapfino", Font.PLAIN, 60));
+	label.setFont(new Font( "Arial", Font.PLAIN, 60));
 	label.setText("Menu");
+	panel.repaint();
+	frame.pack();
 }
 }

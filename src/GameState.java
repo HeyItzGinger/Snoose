@@ -28,7 +28,6 @@ public class GameState extends Screen implements ActionListener {
 		gc.gridx = 0;
 		gc.gridy = 0;
 		panel.add(hangmanImage1);
-		hangmanImage2 = createLabelImage("pixil-boy-0.png");
 		
 		gc.gridx = 0;
 		gc.gridy = 1;

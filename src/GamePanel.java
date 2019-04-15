@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
@@ -9,10 +10,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class GamePanel extends JPanel implements KeyListener {
-	int state = 0;
+	int MENU = 0;
+	int GAME = 1;
+	int END = 2;
+	int numStates = 3;
+	int state = MENU;
 	JPanel menuPanel = new JPanel();
 	JPanel gamePanel = new JPanel();
 	JPanel endPanel = new JPanel();
+	Dimension panelSize;
 	Font titleFont;
 	Font subFont;
 	Graphics g;
@@ -22,7 +28,8 @@ public class GamePanel extends JPanel implements KeyListener {
 
 	public GamePanel() {
 		Snoose.frame.setVisible(true);
-		Snoose.frame.setSize(Snoose.width, Snoose.height);
+		panelSize = new Dimension(Snoose.width, Snoose.height);
+		Snoose.frame.setPreferredSize(panelSize);
 		Snoose.frame.addKeyListener(this);
 		Snoose.frame.add(menuPanel);
 		titleFont = new Font("Zapfino", Font.PLAIN, 55);
@@ -31,6 +38,8 @@ public class GamePanel extends JPanel implements KeyListener {
 		menu = new MenuState(Snoose.frame);
 		game = new GameState(Snoose.frame);
 		end = new EndState(Snoose.frame);
+		
+		drawMenu();
 	}
 
 	public void updateMenuState() {
@@ -53,6 +62,18 @@ public class GamePanel extends JPanel implements KeyListener {
 	public void drawEnd() {
 	end.drawEndScreen();
 	}
+	
+	public void selectScreen() {
+		if(state == MENU) {
+			drawMenu();
+		}
+		if(state == GAME) {
+			drawGame();
+		}
+		if(state == END) {
+			drawEnd();
+		}
+	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -63,25 +84,18 @@ public class GamePanel extends JPanel implements KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("hi");
-		if (state == 0) {
-			drawMenu();
-		} else if (state == 1) {
-			drawGame();
-		} else if (state == 2) {
-			drawEnd();
+		if (state == MENU) {
+			menu.removeScreen();
 		}
-		state = 0;
-		if (e.getKeyCode() == KeyEvent.VK_ENTER && state == 0) {
-			Snoose.frame.getContentPane().removeAll();
-			state = 1;
-		} else if (e.getKeyCode() == KeyEvent.VK_ENTER && state == 1) {
-			Snoose.frame.getContentPane().removeAll();
-			state = 2;
-		} else if (e.getKeyCode() == KeyEvent.VK_ENTER && state == 2) {
-			Snoose.frame.getContentPane().removeAll();
-			state = 0;
+		if (state == GAME) {
+			game.removeScreen();
 		}
+		if (state == END) {
+			end.removeScreen();
+		}
+		
+		state = (state + 1) % numStates;
+		selectScreen();
 	}
 
 	@Override
