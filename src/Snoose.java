@@ -7,6 +7,7 @@ static int height = 800;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		new Snoose();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	public Snoose() {
 		frame = new JFrame();

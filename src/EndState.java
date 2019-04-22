@@ -18,7 +18,7 @@ public class EndState extends Screen{
 		frame.add(panel);
 		panel.add(label);
 		panel.setBackground(backgroundColor);
-		label.setFont(new Font("Tahoma", Font.PLAIN, 80));
+		label.setFont(new Font("Impact", Font.PLAIN, 125));
 		label.setText("GAME OVER");
 		panel.repaint();
 		frame.pack();
