@@ -7,19 +7,35 @@ import javax.swing.JLabel;
 
 public class EndState extends Screen{
 	JLabel label;
+	JLabel label2;
+	JLabel label3;
 	public EndState(JFrame frame) {
 		super(frame);
 		
 		backgroundColor = new Color(255, 204, 204);
 		label = new JLabel();
+		label2 = new JLabel();
+		label3 = new JLabel();
 		// TODO Auto-generated constructor stub
 	}
 	public void drawEndScreen() {
 		frame.add(panel);
-		panel.add(label);
 		panel.setBackground(backgroundColor);
-		label.setFont(new Font("Impact", Font.PLAIN, 125));
+		gc.gridx = 0;
+		gc.gridy = 0;
+		panel.add(label, gc);
+		label.setFont(new Font("Impact", Font.BOLD, 125));
 		label.setText("GAME OVER");
+		gc.gridx = 0;
+		gc.gridy = 1;
+		panel.add(label2, gc);
+		label2.setFont(new Font("Impact", Font.PLAIN, 90));
+		label2.setText("The answer was...");
+		gc.gridx = 0;
+		gc.gridy = 2;
+		panel.add(label3, gc);
+		label3.setFont(new Font("Impact", Font.PLAIN, 40));
+		label3.setText("Press any key if you'd like to restart");
 		panel.repaint();
 		frame.pack();
 	}
