@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.net.URL;
 
 import javax.swing.Icon;
@@ -18,6 +19,7 @@ public class Screen {
 public Screen(JFrame frame) {
 	this.frame = frame;
 	panel = new JPanel();
+	panel.setLayout(new GridBagLayout());
 	gc = new GridBagConstraints();
 	frame.pack();
 	

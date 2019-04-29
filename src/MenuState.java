@@ -33,21 +33,32 @@ public void drawMenuScreen() {
 	panel.setBackground(backgroundColor);
 	gc.gridx = 0;
 	gc.gridy = 0;
+	gc.weightx = 0;
+	gc.weighty = 0;
+	
 	panel.add(label, gc);
 	label.setFont(new Font( "Nanum Pen Script", Font.PLAIN, 200));
 	label.setText("Snoose");
 	gc.gridx = 0;
 	gc.gridy = 1;
+	gc.weightx = 0;
+	gc.weighty = 0;
+	
 	panel.add(label2, gc);
 	label2.setFont(new Font("Nanum Pen Script", Font.PLAIN, 90));
 	label2.setText("Press any key to continue");
 	gc.gridx = 0;
 	gc.gridy = 2;
+	gc.weightx = 0;
+	gc.weighty = 1;
+	
 	panel.add(label3, gc);
 	label3.setFont(new Font("Nanum Pen Script", Font.PLAIN, 50));
 	label3.setText("But first, choose a category...");
 	gc.gridx = 0;
 	gc.gridy = 3;
+	gc.weightx = 0;
+	gc.weighty = 2;
 	panel.add(label3, gc);
 	label3.add(animals);
 	label3.add(places);
