@@ -6,6 +6,7 @@ import java.net.URL;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -37,5 +38,15 @@ public JLabel createLabelImage(String file) {
 public void removeScreen() {
 	this.frame.getContentPane().remove(panel);
 	this.panel.removeAll();
+}
+void addJComponent (JComponent jc, int x, int y, int wX, int wY) {
+	GridBagConstraints c = new GridBagConstraints();
+	c.gridx = x;
+	c.gridy = y;
+	c.weightx = wX;
+	c.weighty = wY;
+	
+	this.panel.add(jc, c);
+	
 }
 }
