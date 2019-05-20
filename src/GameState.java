@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,12 +13,20 @@ public class GameState extends Screen implements ActionListener {
 	JLabel hangmanImage2;
 	JTextField text;
 	JButton answer;
+	Random rand = new Random();
+	String spaces;
 
 	public GameState(JFrame frame) {
 		super(frame);
+		int wrdLength = rand.nextInt(aniWrds.length);
 		backgroundColor = new Color(255, 170, 187);
 		text = new JTextField();
 		answer = new JButton("Guess");
+		
+		for(int i = 0; i ; i ++) {
+			
+		}
+	
 		// TODO Auto-generated constructor stub
 	}
 

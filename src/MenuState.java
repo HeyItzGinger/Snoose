@@ -21,9 +21,6 @@ JButton places;
 JButton basicTerms;
 
 String[] category;
-String[] aniWrds = {"frog", "penguin", "skunk", "panda", "llama"};
-String[] plaWrds = {"Paris", "Athens", "Rome", "Guatemala", "Washington"};
-String[] basWrds = {"yeet", "frappuchino", "sksksk", "okur", "spill the tea sis"};
 	public MenuState(JFrame frame) {
 		super(frame);
 		backgroundColor = new Color(255, 255, 187);
@@ -110,14 +107,14 @@ public void drawMenuScreen() {
 public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
 	if (e.equals(animals)) {
-		category = animals;
+		category = aniWrds;
 	}
 	else if (e.equals(places)) {
-		category = places;
+		category = plaWrds;
 	}
 	else if(e.equals(basicTerms)) {
 		category.equals(basicTerms);
-		category = basicTerms;
+		category = basWrds;
 	}
 }
 
