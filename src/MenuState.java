@@ -20,7 +20,6 @@ JButton animals;
 JButton places;
 JButton basicTerms;
 
-String[] category;
 	public MenuState(JFrame frame) {
 		super(frame);
 		backgroundColor = new Color(255, 255, 187);
@@ -106,14 +105,14 @@ public void drawMenuScreen() {
 @Override
 public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
-	if (e.equals(animals)) {
+	Object source = e.getSource();
+	if (source == animals) {
 		category = aniWrds;
 	}
-	else if (e.equals(places)) {
+	else if (source == places) {
 		category = plaWrds;
 	}
-	else if(e.equals(basicTerms)) {
-		category.equals(basicTerms);
+	else if(source == basicTerms) {
 		category = basWrds;
 	}
 }

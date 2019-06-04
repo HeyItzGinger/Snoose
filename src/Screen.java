@@ -16,6 +16,7 @@ public class Screen {
 	JPanel panel;
 	Color backgroundColor;;
 	GridBagConstraints gc;
+	String[] category;
 	String[] aniWrds = {"frog", "penguin", "skunk", "panda", "llama"};
 	String[] plaWrds = {"Paris", "Athens", "Rome", "Guatemala", "Washington"};
 	String[] basWrds = {"yeet", "wait there was homework?", "sksksk", "okur", "spill the tea sis"};
