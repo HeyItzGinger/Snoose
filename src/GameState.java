@@ -13,16 +13,16 @@ public class GameState extends Screen implements ActionListener {
 	JLabel hangmanImage2;
 	JTextField text;
 	JTextField word;
-	JButton answer;
-	JButton start
+	JButton submit;
 	Random rand = new Random();
 	String spaces;
+	char[] answer;
 
 	public GameState(JFrame frame) {
 		super(frame);
 		backgroundColor = new Color(255, 170, 187);
 		text = new JTextField();
-		answer = new JButton("Guess");
+		submit = new JButton("Guess");
 		
 		// TODO Auto-generated constructor stub
 	}
@@ -48,7 +48,7 @@ public class GameState extends Screen implements ActionListener {
 		gc.gridy = 2;
 		gc.weightx = 2;
 		gc.weighty = 1;
-		panel.add(answer, gc);
+		panel.add(submit, gc);
 		
 		gc.gridx = 0;
 		gc.gridy = 3;
@@ -59,12 +59,13 @@ public class GameState extends Screen implements ActionListener {
 		int wrdLength = rand.nextInt(aniWrds.length);
 		String secretWrd = category[wrdLength];
 		
-		
-		for(int i = 0; i > secretWrd.length(); i ++) {
-			word.setText("_");
+		answer = new char[secretWrd.length()];
+	
+		for(int i = 0; i < secretWrd.length(); i ++) {
+			answer[i] = '_';
 		}
 		
-		answer.addActionListener(this);
+		submit.addActionListener(this);
 		panel.repaint();
 		frame.pack();
 
