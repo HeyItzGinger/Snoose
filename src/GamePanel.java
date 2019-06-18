@@ -86,12 +86,15 @@ public class GamePanel extends JPanel implements KeyListener {
 		// TODO Auto-generated method stub
 		if (state == MENU) {
 			menu.removeScreen();
+			System.out.println("pressed");
 		}
 		if (state == GAME) {
 			game.removeScreen();
+			System.out.println("pressed");
 		}
 		if (state == END) {
 			end.removeScreen();
+			System.out.println("pressed");
 		}
 		
 		state = (state + 1) % numStates;

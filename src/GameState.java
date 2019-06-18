@@ -23,6 +23,7 @@ public class GameState extends Screen implements ActionListener {
 		backgroundColor = new Color(255, 170, 187);
 		text = new JTextField();
 		submit = new JButton("Guess");
+		word = new JTextField();
 		
 		// TODO Auto-generated constructor stub
 	}
@@ -65,6 +66,8 @@ public class GameState extends Screen implements ActionListener {
 			answer[i] = '_';
 		}
 		
+		String strAnswer = new String(answer);
+		word.setText(strAnswer);
 		submit.addActionListener(this);
 		panel.repaint();
 		frame.pack();

@@ -40,6 +40,9 @@ public void drawMenuScreen() {
 	animals.addActionListener(this);
 	places.addActionListener(this);
 	basicTerms.addActionListener(this);
+	animals.setFocusable(false);
+	places.setFocusable(false);
+	basicTerms.setFocusable(false);
 	
 	panel.setBackground(backgroundColor);
 	gc.gridx = 0;

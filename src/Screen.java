@@ -16,7 +16,8 @@ public class Screen {
 	JPanel panel;
 	Color backgroundColor;;
 	GridBagConstraints gc;
-	String[] category;
+	//TO DO: change category once done w testing
+	String[] category = {"h", "hy", "j", "g","i"};
 	String[] aniWrds = {"frog", "penguin", "skunk", "panda", "llama"};
 	String[] plaWrds = {"Paris", "Athens", "Rome", "Guatemala", "Washington"};
 	String[] basWrds = {"yeet", "wait there was homework?", "sksksk", "okur", "spill the tea sis"};
