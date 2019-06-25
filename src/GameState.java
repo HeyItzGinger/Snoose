@@ -57,7 +57,7 @@ public class GameState extends Screen implements ActionListener {
 		gc.weighty = 1;
 		panel.add(word, gc);
 		
-		int wrdLength = rand.nextInt(aniWrds.length);
+		int wrdLength = rand.nextInt(category.length);
 		String secretWrd = category[wrdLength];
 		
 		answer = new char[secretWrd.length()];
