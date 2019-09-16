@@ -99,8 +99,8 @@ public void drawMenuScreen() {
 	gc.weighty = 2;
 	addJComponent(basicTerms, 0, 6, 1, 2);
 	
-	panel.repaint();
 	frame.pack();
+	panel.repaint();
 }
 
 

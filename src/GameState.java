@@ -18,6 +18,8 @@ public class GameState extends Screen implements ActionListener {
 	String spaces;
 	char[] answer;
 	String strAnswer;
+	String secretWrd;
+	int c = 0;
 
 	public GameState(JFrame frame) {
 		super(frame);
@@ -61,7 +63,7 @@ public class GameState extends Screen implements ActionListener {
 		submit.addActionListener(this);
 		
 		int wrdLength = rand.nextInt(category.length);
-		String secretWrd = category[wrdLength];
+		secretWrd = category[wrdLength];
 		
 		answer = new char[secretWrd.length()];
 	
@@ -86,9 +88,14 @@ public class GameState extends Screen implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		String wrdGuess = word.getText();
-			if (wrdGuess.equals(secretWrd)) {
-				
-		}
+			if (secretWrd.charAt(c) == text.getText().charAt(0)) {
+				answer[c] = text.getText().charAt(0);
+				word.setText(strAnswer);
+				System.out.println("correct");
+			
+			}
+			else {
+				System.out.println(secretWrd);
+			}
 	}
 }

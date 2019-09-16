@@ -18,9 +18,9 @@ public class Screen {
 	GridBagConstraints gc;
 	//TO DO: change category once done w testing
 	static String[] category ;
-	String[] aniWrds = {"frog", "penguin", "skunk", "panda", "llama"};
-	String[] plaWrds = {"Paris", "Athens", "Rome", "Guatemala", "Washington"};
-	String[] basWrds = {"yeet", "wait there was homework?", "sksksk", "okur", "spill the tea sis"};
+	String[] aniWrds = {"frog", "penguin", "skunk", "panda", "squid"};
+	String[] plaWrds = {"paris", "athens", "rome", "louisana", "washington"};
+	String[] basWrds = {"yeet", "oop", "sksksk", "ily", "tea"};
 	
 public Screen(JFrame frame) {
 	this.frame = frame;
