@@ -71,12 +71,8 @@ public class GameState extends Screen implements ActionListener {
 			answer[i] = '_';
 		}
 		
-		
-		
-		
-		
-		
-		
+		strAnswer = new String(answer);
+		word.setText(strAnswer);
 		submit.addActionListener(this);
 		panel.repaint();
 		frame.pack();
@@ -91,6 +87,8 @@ public class GameState extends Screen implements ActionListener {
 				strAnswer = new String(answer);
 				word.setText(strAnswer);
 				System.out.println(secretWrd + " is the word. your guess is correct");
+				
+				c ++;
 			
 			}
 			else {
