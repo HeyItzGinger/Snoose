@@ -14,6 +14,7 @@ import javax.swing.Timer;
 
 public class GamePanel extends JPanel implements KeyListener, ActionListener {
 	Timer timer;
+	static long counter;
 	
 	int MENU = 0;
 	int GAME = 1;
@@ -46,7 +47,13 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 		end = new EndState(Snoose.frame);
 		
 		drawMenu();
+		
+		timer.start();
 	}
+	public void paintCompnent(Graphics g) {
+		g.drawString("" + GamePanel.counter, 0, 0);
+		System.out.println(GamePanel.counter);
+}
 
 	public void updateMenuState() {
 
@@ -80,6 +87,8 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 			drawEnd();
 		}
 	}
+	
+
 
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -116,6 +125,12 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+		if (state == GAME) {
+			counter ++; 
+			System.out.println(counter);
+		}
+		else {
+			
+		}
 	}
 }

@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
@@ -27,6 +28,7 @@ public class GameState extends Screen implements ActionListener {
 		text = new JTextField(1);
 		submit = new JButton("Guess");
 		word = new JTextField();
+
 		
 		// TODO Auto-generated constructor stub
 	}
@@ -60,6 +62,8 @@ public class GameState extends Screen implements ActionListener {
 		gc.weighty = 1;
 		panel.add(word, gc);
 		
+		
+		
 		submit.addActionListener(this);
 		
 		int wrdLength = rand.nextInt(category.length);
@@ -77,6 +81,10 @@ public class GameState extends Screen implements ActionListener {
 		panel.repaint();
 		frame.pack();
 
+	}
+	public void paintCompnent(Graphics g) {
+			g.drawString("" + GamePanel.counter, 0, 0);
+			System.out.println(GamePanel.counter);
 	}
 
 	@Override
