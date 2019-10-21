@@ -24,6 +24,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 	JPanel menuPanel = new JPanel();
 	JPanel gamePanel = new JPanel();
 	JPanel endPanel = new JPanel();
+	JButton hint = new JButton("Hints (3)");
 	Dimension panelSize;
 	Font titleFont;
 	Font subFont;
@@ -128,6 +129,10 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 		if (state == GAME) {
 			counter ++; 
 			System.out.println(counter);
+			if (counter == 120) {
+				System.out.println("GAME OVER, stop playing");
+				
+			}
 		}
 		else {
 			
