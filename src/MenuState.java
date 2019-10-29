@@ -36,7 +36,7 @@ JButton basicTerms;
 
 
 public void drawMenuScreen() {
-	frame.add(panel);
+	frame.add(this);
 	animals.addActionListener(this);
 	places.addActionListener(this);
 	basicTerms.addActionListener(this);
@@ -44,7 +44,7 @@ public void drawMenuScreen() {
 	places.setFocusable(false);
 	basicTerms.setFocusable(false);
 	
-	panel.setBackground(backgroundColor);
+	this.setBackground(backgroundColor);
 	gc.gridx = 0;
 	gc.gridy = 0;
 	gc.weightx = 0;
@@ -100,7 +100,7 @@ public void drawMenuScreen() {
 	addJComponent(basicTerms, 0, 6, 1, 2);
 	
 	frame.pack();
-	panel.repaint();
+	this.repaint();
 }
 
 

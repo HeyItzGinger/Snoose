@@ -34,33 +34,33 @@ public class GameState extends Screen implements ActionListener {
 	}
 
 	public void drawGameScreen() {
-		frame.add(panel);
-		panel.setBackground(backgroundColor);
+		frame.add(this);
+		this.setBackground(backgroundColor);
 		hangmanImage1 = createLabelImage("pixil-girl-0.png");
 		
 		gc.gridx = 0;
 		gc.gridy = 0;
 		gc.weightx = 1;
 		gc.weighty = 0;
-		panel.add(hangmanImage1, gc);
+		this.add(hangmanImage1, gc);
 		
 		gc.gridx = 0;
 		gc.gridy = 1;
 		gc.weightx = 2;
 		gc.weighty = 1;
-		panel.add(text, gc);
+		this.add(text, gc);
 		
 		gc.gridx = 0;
 		gc.gridy = 2;
 		gc.weightx = 2;
 		gc.weighty = 1;
-		panel.add(submit, gc);
+		this.add(submit, gc);
 		
 		gc.gridx = 0;
 		gc.gridy = 3;
 		gc.weightx = 2;
 		gc.weighty = 1;
-		panel.add(word, gc);
+		this.add(word, gc);
 		
 		
 		
@@ -78,11 +78,13 @@ public class GameState extends Screen implements ActionListener {
 		strAnswer = new String(answer);
 		word.setText(strAnswer);
 		submit.addActionListener(this);
-		panel.repaint();
 		frame.pack();
+		this.revalidate();
+		this.repaint();
 
 	}
-	public void paintCompnent(Graphics g) {
+	@Override
+	public void paintComponent(Graphics g) {
 			g.drawString("" + GamePanel.counter, 0, 0);
 			System.out.println(GamePanel.counter);
 	}

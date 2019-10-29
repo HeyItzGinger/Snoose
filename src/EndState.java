@@ -19,24 +19,24 @@ public class EndState extends Screen{
 		// TODO Auto-generated constructor stub
 	}
 	public void drawEndScreen() {
-		frame.add(panel);
-		panel.setBackground(backgroundColor);
+		frame.add(this);
+		this.setBackground(backgroundColor);
 		gc.gridx = 0;
 		gc.gridy = 0;
-		panel.add(label, gc);
+		this.add(label, gc);
 		label.setFont(new Font("Impact", Font.BOLD, 125));
 		label.setText("GAME OVER");
 		gc.gridx = 0;
 		gc.gridy = 1;
-		panel.add(label2, gc);
+		this.add(label2, gc);
 		label2.setFont(new Font("Impact", Font.PLAIN, 90));
 		label2.setText("The answer was...");
 		gc.gridx = 0;
 		gc.gridy = 2;
-		panel.add(label3, gc);
+		this.add(label3, gc);
 		label3.setFont(new Font("Impact", Font.PLAIN, 40));
 		label3.setText("Press any key if you'd like to restart");
-		panel.repaint();
+		this.repaint();
 		frame.pack();
 	}
 
