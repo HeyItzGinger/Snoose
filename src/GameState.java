@@ -1,7 +1,10 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.Random;
 
 import javax.swing.JButton;
@@ -9,7 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class GameState extends Screen implements ActionListener {
+public class GameState extends Screen implements ActionListener, MouseListener {
 	JLabel hangmanImage1;
 	JLabel hangmanImage2;
 	JTextField text;
@@ -28,6 +31,9 @@ public class GameState extends Screen implements ActionListener {
 		text = new JTextField(1);
 		submit = new JButton("Guess");
 		word = new JTextField();
+		hangmanImage1 = createLabelImage("pixil-girl-0.png");
+		hangmanImage1.addMouseListener(this);
+		
 
 		
 		// TODO Auto-generated constructor stub
@@ -36,7 +42,6 @@ public class GameState extends Screen implements ActionListener {
 	public void drawGameScreen() {
 		frame.add(this);
 		this.setBackground(backgroundColor);
-		hangmanImage1 = createLabelImage("pixil-girl-0.png");
 		
 		gc.gridx = 0;
 		gc.gridy = 0;
@@ -85,7 +90,7 @@ public class GameState extends Screen implements ActionListener {
 	}
 	@Override
 	public void paintComponent(Graphics g) {
-			g.drawString("" + GamePanel.counter, 0, 0);
+			g.drawString("" + GamePanel.counter, 20, 20);
 			System.out.println(GamePanel.counter);
 	}
 
@@ -104,5 +109,44 @@ public class GameState extends Screen implements ActionListener {
 			else {
 				System.out.println(secretWrd + " is the word. your guess is incorrect");
 			}
+			this.repaint();
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		Point p = e.getPoint();
+		System.out.println("here");
+		if (p.x >= 300 && p.x <= 400) {
+			
+		}
+		if (p.y >= 50 && p.y <= 500) {
+			
+		}
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }

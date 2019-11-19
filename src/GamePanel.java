@@ -131,8 +131,8 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 			System.out.println(counter);
 			if (counter == 120) {
 				System.out.println("GAME OVER, stop playing");
-				
 			}
+			game.repaint();
 		}
 		else {
 			
