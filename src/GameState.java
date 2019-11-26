@@ -24,6 +24,7 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 	String strAnswer;
 	String secretWrd;
 	int c = 0;
+	boolean showHint;
 
 	public GameState(JFrame frame) {
 		super(frame);
@@ -92,6 +93,9 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 	public void paintComponent(Graphics g) {
 			g.drawString("" + GamePanel.counter, 20, 20);
 			System.out.println(GamePanel.counter);
+			if(showHint) {
+				g.drawString(hints.get(category), 450, 10);
+			}
 	}
 
 	@Override
@@ -116,11 +120,11 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		Point p = e.getPoint();
-		System.out.println("here");
-		if (p.x >= 300 && p.x <= 400) {
-			
+		if (p.x >= 100 && p.x <= 350) {
+			showHint = true;
+			System.out.println("here");	
 		}
-		if (p.y >= 50 && p.y <= 500) {
+		if (p.y >= 10 && p.y <= 460) {
 			
 		}
 		
