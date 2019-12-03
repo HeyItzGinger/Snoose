@@ -25,6 +25,8 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 	String secretWrd;
 	int c = 0;
 	boolean showHint;
+	int categoryChange = 0;
+	int hintChange = 0;
 
 	public GameState(JFrame frame) {
 		super(frame);
@@ -94,8 +96,9 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 			g.drawString("" + GamePanel.counter, 20, 20);
 			System.out.println(GamePanel.counter);
 			if(showHint) {
-				g.drawString(hints.get(category), 450, 10);
+				g.drawString(hints.get(category[categoryChange]).get(hintChange), 590, 120);
 			}
+			
 	}
 
 	@Override
@@ -107,8 +110,6 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 				word.setText(strAnswer);
 				System.out.println(secretWrd + " is the word. your guess is correct");
 				
-				c ++;
-			
 			}
 			else {
 				System.out.println(secretWrd + " is the word. your guess is incorrect");
