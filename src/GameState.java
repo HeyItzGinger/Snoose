@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import java.util.Random;
 
 import javax.swing.JButton;
@@ -25,9 +26,9 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 	String secretWrd;
 	int c = 0;
 	boolean showHint;
-	int categoryChange = 0;
-	int hintChange = 0;
-
+	ArrayList<String> h;
+	int hintNum = 0;
+	
 	public GameState(JFrame frame) {
 		super(frame);
 		backgroundColor = new Color(255, 170, 187);
@@ -45,6 +46,8 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 	public void drawGameScreen() {
 		frame.add(this);
 		this.setBackground(backgroundColor);
+		
+		h = hints.get(category);
 		
 		gc.gridx = 0;
 		gc.gridy = 0;
@@ -96,7 +99,14 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 			g.drawString("" + GamePanel.counter, 20, 20);
 			System.out.println(GamePanel.counter);
 			if(showHint) {
-				g.drawString(hints.get(category[categoryChange]).get(hintChange), 590, 120);
+				String hints = h.get(hintNum);
+				g.drawString(hints.get(hintNum).get(0), 590, 120);
+				hintNum ++;
+				if(hintNum > h.size()) {
+					
+				}
+				
+				
 			}
 			
 	}
