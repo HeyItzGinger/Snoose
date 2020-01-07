@@ -23,7 +23,8 @@ public class Screen extends JPanel{
 	String[] plaWrds = {"paris", "athens", "rome", "louisiana", "guatemala"};
 	String[] basWrds = {"yeet", "oop", "sksksk", "ily", "tea"};
 	
-	HashMap<String, ArrayList<String>> hints = new HashMap<String, ArrayList<String>>();
+	HashMap<String, ArrayList<String>>
+	hints = new HashMap<String, ArrayList<String>>();
 	
 public Screen(JFrame frame) {
 	this.frame = frame;

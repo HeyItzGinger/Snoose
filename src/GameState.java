@@ -28,6 +28,7 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 	boolean showHint;
 	ArrayList<String> h;
 	int hintNum = 0;
+	int catNum = 0;
 	
 	public GameState(JFrame frame) {
 		super(frame);
@@ -38,7 +39,7 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 		hangmanImage1 = createLabelImage("pixil-girl-0.png");
 		hangmanImage1.addMouseListener(this);
 		
-
+		catNum = new Random().nextInt(category.length);
 		
 		// TODO Auto-generated constructor stub
 	}
@@ -99,8 +100,9 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 			g.drawString("" + GamePanel.counter, 20, 20);
 			System.out.println(GamePanel.counter);
 			if(showHint) {
-				String hints = h.get(hintNum);
-				g.drawString(hints.get(hintNum).get(0), 590, 120);
+				System.out.println(catNum);
+				System.out.println(hintNum);
+				g.drawString(hints.get(category[catNum]).get(hintNum), 590, 120);
 				hintNum ++;
 				if(hintNum > h.size()) {
 					
@@ -133,6 +135,7 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 		Point p = e.getPoint();
 		if (p.x >= 100 && p.x <= 350) {
 			showHint = true;
+			hintNum ++;
 			System.out.println("here");	
 		}
 		if (p.y >= 10 && p.y <= 460) {
@@ -140,6 +143,7 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 		}
 		
 	}
+
 
 	@Override
 	public void mousePressed(MouseEvent e) {
