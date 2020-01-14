@@ -29,7 +29,7 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 	ArrayList<String> h;
 	int hintNum = 0;
 	int catNum = 0;
-	
+
 	public GameState(JFrame frame) {
 		super(frame);
 		backgroundColor = new Color(255, 170, 187);
@@ -38,55 +38,52 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 		word = new JTextField();
 		hangmanImage1 = createLabelImage("pixil-girl-0.png");
 		hangmanImage1.addMouseListener(this);
-		
-		catNum = new Random().nextInt(category.length);
-		
+
 		// TODO Auto-generated constructor stub
 	}
 
 	public void drawGameScreen() {
 		frame.add(this);
 		this.setBackground(backgroundColor);
-		
+		catNum = new Random().nextInt(category.length);
+
 		h = hints.get(category);
-		
+
 		gc.gridx = 0;
 		gc.gridy = 0;
 		gc.weightx = 1;
 		gc.weighty = 0;
 		this.add(hangmanImage1, gc);
-		
+
 		gc.gridx = 0;
 		gc.gridy = 1;
 		gc.weightx = 2;
 		gc.weighty = 1;
 		this.add(text, gc);
-		
+
 		gc.gridx = 0;
 		gc.gridy = 2;
 		gc.weightx = 2;
 		gc.weighty = 1;
 		this.add(submit, gc);
-		
+
 		gc.gridx = 0;
 		gc.gridy = 3;
 		gc.weightx = 2;
 		gc.weighty = 1;
 		this.add(word, gc);
-		
-		
-		
+
 		submit.addActionListener(this);
-		
+
 		int wrdLength = rand.nextInt(category.length);
 		secretWrd = category[wrdLength];
-		
+
 		answer = new char[secretWrd.length()];
-	
-		for(int i = 0; i < secretWrd.length(); i ++) {
+
+		for (int i = 0; i < secretWrd.length(); i++) {
 			answer[i] = '_';
 		}
-		
+
 		strAnswer = new String(answer);
 		word.setText(strAnswer);
 		submit.addActionListener(this);
@@ -95,38 +92,42 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 		this.repaint();
 
 	}
+
 	@Override
 	public void paintComponent(Graphics g) {
-			g.drawString("" + GamePanel.counter, 20, 20);
-			System.out.println(GamePanel.counter);
-			if(showHint) {
+		g.drawString("" + GamePanel.counter, 20, 20);
+		System.out.println(GamePanel.counter);
+		if (showHint) {
+			showHint = false;
+			if (hintNum < hints.get(category[catNum]).size()) {
 				System.out.println(catNum);
 				System.out.println(hintNum);
 				g.drawString(hints.get(category[catNum]).get(hintNum), 590, 120);
-				hintNum ++;
-				if(hintNum > h.size()) {
-					
-				}
-				
-				
+				hintNum++;
 			}
-			
+			if (h != null) {
+				if (hintNum > h.size()) {
+
+				}
+			}
+
+		}
+
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-			if (secretWrd.charAt(c) == text.getText().charAt(0)) {
-				answer[c] = text.getText().charAt(0);
-				strAnswer = new String(answer);
-				word.setText(strAnswer);
-				System.out.println(secretWrd + " is the word. your guess is correct");
-				
-			}
-			else {
-				System.out.println(secretWrd + " is the word. your guess is incorrect");
-			}
-			this.repaint();
+		if (secretWrd.charAt(c) == text.getText().charAt(0)) {
+			answer[c] = text.getText().charAt(0);
+			strAnswer = new String(answer);
+			word.setText(strAnswer);
+			System.out.println(secretWrd + " is the word. your guess is correct");
+
+		} else {
+			System.out.println(secretWrd + " is the word. your guess is incorrect");
+		}
+		this.repaint();
 	}
 
 	@Override
@@ -135,37 +136,36 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 		Point p = e.getPoint();
 		if (p.x >= 100 && p.x <= 350) {
 			showHint = true;
-			hintNum ++;
-			System.out.println("here");	
+			hintNum++;
+			System.out.println("here");
 		}
 		if (p.y >= 10 && p.y <= 460) {
-			
-		}
-		
-	}
 
+		}
+
+	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
