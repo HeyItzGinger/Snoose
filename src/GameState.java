@@ -45,7 +45,8 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 	public void drawGameScreen() {
 		frame.add(this);
 		this.setBackground(backgroundColor);
-		catNum = new Random().nextInt(category.length);
+		int wrdLength = rand.nextInt(category.length);
+		catNum = wrdLength;
 
 		h = hints.get(category);
 
@@ -75,7 +76,6 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 
 		submit.addActionListener(this);
 
-		int wrdLength = rand.nextInt(category.length);
 		secretWrd = category[wrdLength];
 
 		answer = new char[secretWrd.length()];
@@ -97,13 +97,13 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 	public void paintComponent(Graphics g) {
 		g.drawString("" + GamePanel.counter, 20, 20);
 		System.out.println(GamePanel.counter);
+		g.drawString(getHint);
 		if (showHint) {
 			showHint = false;
 			if (hintNum < hints.get(category[catNum]).size()) {
 				System.out.println(catNum);
 				System.out.println(hintNum);
-				g.drawString(hints.get(category[catNum]).get(hintNum), 590, 120);
-				hintNum++;
+			
 			}
 			if (h != null) {
 				if (hintNum > h.size()) {
@@ -118,18 +118,27 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if (secretWrd.charAt(c) == text.getText().charAt(0)) {
-			answer[c] = text.getText().charAt(0);
-			strAnswer = new String(answer);
-			word.setText(strAnswer);
-			System.out.println(secretWrd + " is the word. your guess is correct");
+		for (int i = 0; i < secretWrd.length(); i++) {
+			if (secretWrd.charAt(i) == text.getText().charAt(0)) {
+				answer[i] = text.getText().charAt(0);
+				strAnswer = new String(answer);
+				word.setText(strAnswer);
+				System.out.println(secretWrd + " is the word. your guess is correct");
 
-		} else {
-			System.out.println(secretWrd + " is the word. your guess is incorrect");
+			} else {
+				System.out.println(secretWrd + " is the word. your guess is incorrect");
+			}
 		}
 		this.repaint();
 	}
-
+	
+	public String getHint() {
+		hints.get(category[catNum]).get(hintNum), 590, 120
+		hintNum++;
+		hintNum = hintNum%3;
+		return
+	}
+	
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -138,6 +147,7 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 			showHint = true;
 			hintNum++;
 			System.out.println("here");
+			getHint();
 		}
 		if (p.y >= 10 && p.y <= 460) {
 
