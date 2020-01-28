@@ -29,6 +29,7 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 	ArrayList<String> h;
 	int hintNum = 0;
 	int catNum = 0;
+	boolean hintRequest = false;
 
 	public GameState(JFrame frame) {
 		super(frame);
@@ -97,7 +98,12 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 	public void paintComponent(Graphics g) {
 		g.drawString("" + GamePanel.counter, 20, 20);
 		System.out.println(GamePanel.counter);
-		g.drawString(getHint);
+		
+		if(hintRequest == true) {
+			g.drawString(getHint(), 560, 122);
+			hintRequest = false;
+		}
+		
 		if (showHint) {
 			showHint = false;
 			if (hintNum < hints.get(category[catNum]).size()) {
@@ -133,10 +139,13 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 	}
 	
 	public String getHint() {
-		hints.get(category[catNum]).get(hintNum), 590, 120
+		System.out.println(catNum);
+		System.out.println(hintNum);
+		String hintString = hints.get(category[catNum]).get(hintNum);
 		hintNum++;
 		hintNum = hintNum%3;
-		return
+		return hintString;
+		
 	}
 	
 	@Override
@@ -145,15 +154,16 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 		Point p = e.getPoint();
 		if (p.x >= 100 && p.x <= 350) {
 			showHint = true;
-			hintNum++;
 			System.out.println("here");
-			getHint();
+			
+			hintRequest = true;
 		}
 		if (p.y >= 10 && p.y <= 460) {
 
 		}
-
+		
 	}
+	
 
 	@Override
 	public void mousePressed(MouseEvent e) {
