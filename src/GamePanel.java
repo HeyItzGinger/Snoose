@@ -126,13 +126,21 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		
 		if (state == GAME) {
+			game.repaint();
+			System.out.println("dgjalsjfgb");
 			counter ++; 
 			System.out.println(counter);
 			if (counter == 120) {
+				game.removeScreen();
+				state = END;
+				selectScreen();
 				System.out.println("GAME OVER, stop playing");
+
+				timer.stop();
+				
 			}
-			game.repaint();
 		}
 		else {
 			

@@ -99,6 +99,8 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 		g.drawString("" + GamePanel.counter, 20, 20);
 		System.out.println(GamePanel.counter);
 		
+		System.out.println("paint");
+		
 		if(hintRequest == true) {
 			g.drawString(getHint(), 560, 122);
 			hintRequest = false;
@@ -136,6 +138,7 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 			}
 		}
 		this.repaint();
+		System.out.println("paint (2)");
 	}
 	
 	public String getHint() {
