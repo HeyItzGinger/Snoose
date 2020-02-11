@@ -23,13 +23,14 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 	String spaces;
 	char[] answer;
 	String strAnswer;
-	String secretWrd;
+	static String secretWrd;
 	int c = 0;
 	boolean showHint;
 	ArrayList<String> h;
 	int hintNum = 0;
 	int catNum = 0;
 	boolean hintRequest = false;
+	boolean correctResponse = false;
 
 	public GameState(JFrame frame) {
 		super(frame);
@@ -98,20 +99,20 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 	public void paintComponent(Graphics g) {
 		g.drawString("" + GamePanel.counter, 20, 20);
 		System.out.println(GamePanel.counter);
-		
+
 		System.out.println("paint");
-		
-		if(hintRequest == true) {
+
+		if (hintRequest == true) {
 			g.drawString(getHint(), 560, 122);
 			hintRequest = false;
 		}
-		
+
 		if (showHint) {
 			showHint = false;
 			if (hintNum < hints.get(category[catNum]).size()) {
 				System.out.println(catNum);
 				System.out.println(hintNum);
-			
+
 			}
 			if (h != null) {
 				if (hintNum > h.size()) {
@@ -123,6 +124,10 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 
 	}
 
+	static String getAnswer() {
+		return secretWrd;
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -132,6 +137,7 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 				strAnswer = new String(answer);
 				word.setText(strAnswer);
 				System.out.println(secretWrd + " is the word. your guess is correct");
+				
 
 			} else {
 				System.out.println(secretWrd + " is the word. your guess is incorrect");
@@ -140,17 +146,21 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 		this.repaint();
 		System.out.println("paint (2)");
 	}
-	
+
 	public String getHint() {
 		System.out.println(catNum);
 		System.out.println(hintNum);
 		String hintString = hints.get(category[catNum]).get(hintNum);
 		hintNum++;
-		hintNum = hintNum%3;
+		hintNum = hintNum % 3;
 		return hintString;
-		
+
 	}
 	
+	public boolean isAnswerCorrect() {
+		return correctResponse;
+	}
+
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -158,15 +168,14 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 		if (p.x >= 100 && p.x <= 350) {
 			showHint = true;
 			System.out.println("here");
-			
+
 			hintRequest = true;
 		}
 		if (p.y >= 10 && p.y <= 460) {
 
 		}
-		
+
 	}
-	
 
 	@Override
 	public void mousePressed(MouseEvent e) {

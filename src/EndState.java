@@ -5,19 +5,21 @@ import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class EndState extends Screen{
+public class EndState extends Screen {
 	JLabel label;
 	JLabel label2;
 	JLabel label3;
+
 	public EndState(JFrame frame) {
 		super(frame);
-		
+
 		backgroundColor = new Color(255, 204, 204);
 		label = new JLabel();
 		label2 = new JLabel();
 		label3 = new JLabel();
 		// TODO Auto-generated constructor stub
 	}
+
 	public void drawEndScreen() {
 		frame.add(this);
 		this.setBackground(backgroundColor);
@@ -30,7 +32,7 @@ public class EndState extends Screen{
 		gc.gridy = 1;
 		this.add(label2, gc);
 		label2.setFont(new Font("Impact", Font.PLAIN, 90));
-		label2.setText("The answer was...");
+		label2.setText("The answer was... " + GameState.getAnswer() + " ");
 		gc.gridx = 0;
 		gc.gridy = 2;
 		this.add(label3, gc);
