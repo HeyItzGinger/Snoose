@@ -16,11 +16,11 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 	Timer timer;
 	static long counter;
 	
-	int MENU = 0;
-	int GAME = 1;
-	int END = 2;
+	static int MENU = 0;
+	static int GAME = 1;
+	static int END = 2;
 	int numStates = 3;
-	int state = MENU;
+	static int state = MENU;
 	JPanel menuPanel = new JPanel();
 	JPanel gamePanel = new JPanel();
 	JPanel endPanel = new JPanel();
@@ -29,9 +29,9 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 	Font titleFont;
 	Font subFont;
 	Graphics g;
-	MenuState menu;
-	GameState game;
-	EndState end;
+	static MenuState menu;
+	static GameState game;
+	static EndState end;
 
 	public GamePanel() {
 		timer = new Timer(1000, this);
@@ -67,17 +67,17 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 	public void updateEndState() {
 
 	}
-	public void drawMenu() {
+	public static void drawMenu() {
 	menu.drawMenuScreen();
 	}
-	public void drawGame() {
+	public static void drawGame() {
 	game.drawGameScreen();
 	}
-	public void drawEnd() {
+	public static void drawEnd() {
 	end.drawEndScreen();
 	}
 	
-	public void selectScreen() {
+	public static void selectScreen() {
 		if(state == MENU) {
 			drawMenu();
 		}
@@ -132,7 +132,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 			System.out.println("dgjalsjfgb");
 			counter ++; 
 			System.out.println(counter);
-			if (counter == 120) {
+			if (counter == 12) {
 				game.removeScreen();
 				state = END;
 				selectScreen();

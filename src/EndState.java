@@ -32,7 +32,7 @@ public class EndState extends Screen {
 		gc.gridy = 1;
 		this.add(label2, gc);
 		label2.setFont(new Font("Impact", Font.PLAIN, 90));
-		label2.setText("The answer was... " + GameState.getAnswer() + " ");
+		label2.setText("The answer was . . . " + GameState.getAnswer() + "");
 		gc.gridx = 0;
 		gc.gridy = 2;
 		this.add(label3, gc);
