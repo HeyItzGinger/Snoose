@@ -32,12 +32,12 @@ public class EndState extends Screen {
 		gc.gridy = 1;
 		this.add(label2, gc);
 		label2.setFont(new Font("Impact", Font.PLAIN, 90));
-		label2.setText("The answer was . . . " + GameState.getAnswer() + "");
+		label2.setText("The word was " + GameState.getAnswer() + "");
 		gc.gridx = 0;
 		gc.gridy = 2;
 		this.add(label3, gc);
 		label3.setFont(new Font("Impact", Font.PLAIN, 40));
-		label3.setText("Press any key if you'd like to restart");
+		//label3.setText("Press any key if you'd like to restart");
 		this.repaint();
 		frame.pack();
 	}

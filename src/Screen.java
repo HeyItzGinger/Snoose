@@ -20,7 +20,7 @@ public class Screen extends JPanel{
 	//TO DO: change category once done w testing
 	static String[] category ;
 	String[] aniWrds = {"frog", "penguin", "skunk", "panda", "squid"};
-	String[] plaWrds = {"paris", "athens", "rome", "louisiana", "guatemala"};
+	String[] plaWrds = {"france", "athens", "rome", "louisiana", "guatemala"};
 	String[] basWrds = {"yeet", "oop", "sksksk", "ily", "tea"};
 	
 	HashMap<String, ArrayList<String>>
@@ -70,9 +70,9 @@ public Screen(JFrame frame) {
 	hints.get("squid").add("Shoots ink");
 	
 	//places
-	hints.get("paris").add("Flag colors: red, white, blue. NOT AMERICA!!");
-	hints.get("paris").add("The capital of France");
-	hints.get("paris").add("CrOsSaNt ;)");
+	hints.get("france").add("Flag colors: red, white, & blue. NOT AMERICA!!");
+	hints.get("france").add("Its capital is Paris");
+	hints.get("france").add("CrOsSaNt ;)");
 	
 	hints.get("athens").add("City in Greece");
 	hints.get("athens").add("Olive tree??");

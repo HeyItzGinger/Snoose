@@ -32,6 +32,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 	static MenuState menu;
 	static GameState game;
 	static EndState end;
+	static Screen currentScreen = null;
 
 	public GamePanel() {
 		timer = new Timer(1000, this);
@@ -78,13 +79,21 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 	}
 	
 	public static void selectScreen() {
+		
+		if(currentScreen != null) {
+			currentScreen.removeScreen();
+		}
+		
 		if(state == MENU) {
+			currentScreen = menu;
 			drawMenu();
 		}
 		if(state == GAME) {
+			currentScreen = game;
 			drawGame();
 		}
 		if(state == END) {
+			currentScreen = end;
 			drawEnd();
 		}
 	}
@@ -132,7 +141,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 			System.out.println("dgjalsjfgb");
 			counter ++; 
 			System.out.println(counter);
-			if (counter == 12) {
+			if (counter == 120) {
 				game.removeScreen();
 				state = END;
 				selectScreen();

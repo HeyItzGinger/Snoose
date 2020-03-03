@@ -136,11 +136,16 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 				answer[i] = text.getText().charAt(0);
 				strAnswer = new String(answer);
 				word.setText(strAnswer);
+				
+				System.out.println(strAnswer);
+				System.out.println(secretWrd);
+				
 				if(strAnswer.equals(secretWrd)) {
 					GamePanel.state = GamePanel.END;
 					GamePanel.selectScreen();
-					System.out.println("pressed");
+					System.out.println("you won");
 				}
+				
 				System.out.println(secretWrd + " is the word. your guess is correct");
 				
 
