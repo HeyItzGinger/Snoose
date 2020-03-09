@@ -19,7 +19,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 	static int MENU = 0;
 	static int GAME = 1;
 	static int END = 2;
-	int numStates = 3;
+	static int numStates = 3;
 	static int state = MENU;
 	JPanel menuPanel = new JPanel();
 	JPanel gamePanel = new JPanel();
@@ -122,8 +122,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 			System.out.println("pressed");
 		}
 		
-		state = (state + 1) % numStates;
-		selectScreen();
+	
 	}
 
 	@Override
@@ -136,24 +135,30 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
-		if (state == GAME) {
-			game.repaint();
-			System.out.println("dgjalsjfgb");
-			counter ++; 
-			System.out.println(counter);
-			if (counter == 120) {
-				game.removeScreen();
-				state = END;
-				selectScreen();
-				System.out.println("GAME OVER, stop playing");
+	
+			if (state == GAME) {
+				game.repaint();
+				System.out.println("dgjalsjfgb");
+				counter ++; 
+				System.out.println(counter);
+				if (counter == 120) {
+					game.removeScreen();
+					state = END;
+					selectScreen();
+					System.out.println("GAME OVER, stop playing");
 
-				timer.stop();
+					timer.stop();
+					
+				}
+			}
+			else {
 				
 			}
 		}
-		else {
-			
-		}
+		
+		
+	
+		
 	}
-}
+
 

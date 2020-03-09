@@ -118,6 +118,11 @@ public void actionPerformed(ActionEvent e) {
 	else if(source == basicTerms) {
 		category = basWrds;
 	}
+	
+	this.removeScreen();
+	GamePanel.state = (GamePanel.state + 1) % GamePanel.numStates;
+	GamePanel.selectScreen();
+	
 }
 
 
