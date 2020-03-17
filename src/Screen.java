@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Image;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,6 +26,29 @@ public class Screen extends JPanel{
 	
 	HashMap<String, ArrayList<String>>
 	hints = new HashMap<String, ArrayList<String>>();
+	
+	//animals
+	Image frog = ImageIO.read(this.getClass().getResourceAsStream(frog.jpeg)); 
+	Image penguin = ImageIO.read(this.getClass().getResourceAsStream(penguin.jpeg)); 
+	Image skunk = ImageIO.read(this.getClass().getResourceAsStream(skunk.jpeg)); 
+	Image panda = 
+	Image squid = 
+	
+	//places
+	Image france = 
+	Image athens = 
+	Image rome = 
+	Image louisiana = 
+	Image gutemala = 
+
+	//basic words
+	Image yeet = 
+	Image oop = 
+	Image sksksk = 
+	Image ily = 
+	Image tea = 
+	
+	
 	
 public Screen(JFrame frame) {
 	this.frame = frame;
