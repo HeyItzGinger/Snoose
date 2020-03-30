@@ -3,6 +3,7 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,25 +30,25 @@ public class Screen extends JPanel{
 	hints = new HashMap<String, ArrayList<String>>();
 	
 	//animals
-	Image frog = ImageIO.read(this.getClass().getResourceAsStream(frog.jpeg));
-	Image penguin = ImageIO.read(this.getClass().getReasourceAsStream(penguin.jpeg));
-	Image skunk = ImageIO.read(this.getClass().getResourceAsStream(skunk.jpeg));
-	Image panda = ImageIO.read(this.getClass().getResourceAsStream(panda.jpeg));
-	Image squid = ImageIO.read(this.getClass().getResourceAsStream(squid.jpeg));
+	Image frog;
+	Image penguin;
+	Image skunk;
+	Image panda;
+	Image squid;
 	
 	//places
-	Image france = ImageIO.read(this.getClass().getResourceAsStream(france.jpeg));
-	Image athens = ImageIO.read(this.getClass().getResourceAsStream(athens.jpeg));
-	Image rome = ImageIO.read(this.getClass().getResourceAsStream(rome.jpeg));	
-	Image louisiana = ImageIO.read(this.getClass().getResourceAsStream(louisiana.jpeg));
-	Image guatemala = ImageIO.read(this.getClass().getResourceAsStream(guatemala.jpeg)));
+	Image france;
+	Image athens;
+	Image rome;	
+	Image louisiana;
+	Image guatemala;
 	
 	//basic words
-	Image yeet = ImageIO.read(this.getClass().getResourceAsStream(yeet.jpeg));
-	Image oop = ImageIO.read(this.getClass().getResourceAsStrea(oop.jpeg));
-	Image sksksk = ImageIO.read(this.getClass().getResourceAsStream(hydroflask.jpg));
-	Image ily = ImageIO.read(this.getClass().getResourceAsStream(heart.png));
-	Image tea = ImageIO.read(this.getClass().getResourceAsStream(tea.jpeg));
+	Image yeet;
+	Image oop;
+	Image sksksk;
+	Image ily;
+	Image tea;
 	
 	
 public Screen(JFrame frame) {
@@ -71,7 +72,28 @@ public Screen(JFrame frame) {
 		hints.put(basWrds[b], j);
 	}
 
-
+	//animal images
+	try {
+	frog = ImageIO.read(this.getClass().getResourceAsStream("frog.jpeg"));
+	penguin = ImageIO.read(this.getClass().getResourceAsStream("penguin.jpeg"));
+	skunk = ImageIO.read(this.getClass().getResourceAsStream("skunk.jpeg"));
+	panda = ImageIO.read(this.getClass().getResourceAsStream("panda.jpeg"));
+	squid = ImageIO.read(this.getClass().getResourceAsStream("squid.jpeg"));
+	
+	//places images
+	france = ImageIO.read(this.getClass().getResourceAsStream("france.jpeg"));
+	athens = ImageIO.read(this.getClass().getResourceAsStream("athens.jpeg"));
+	rome = ImageIO.read(this.getClass().getResourceAsStream("rome.jpeg"));
+	louisiana = ImageIO.read(this.getClass().getResourceAsStream("louisiana.jpeg"));
+	guatemala = ImageIO.read(this.getClass().getResourceAsStream("guatemala.jpeg"));
+	
+	//basic images
+	yeet = ImageIO.read(this.getClass().getResourceAsStream("yeet.jpeg"));
+	oop = ImageIO.read(this.getClass().getResourceAsStream("oop.jpeg"));
+	sksksk = ImageIO.read(this.getClass().getResourceAsStream("hydroflask.jpg"));
+	ily = ImageIO.read(this.getClass().getResourceAsStream("heart.png"));
+	tea = ImageIO.read(this.getClass().getResourceAsStream("tea.jpeg"));
+	} catch(IOException e) {e.printStackTrace();}
 	//animals
 	hints.get("frog").add("It can be slimy");
 	hints.get("frog").add("Can be many different colors, but is most commonly green");

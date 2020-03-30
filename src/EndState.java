@@ -1,6 +1,7 @@
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -40,6 +41,27 @@ public class EndState extends Screen {
 		//label3.setText("Press any key if you'd like to restart");
 		this.repaint();
 		frame.pack();
+	}
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		//animals 
+		g.drawImage(frog, 30, 200, 50, 25, null);
+		g.drawImage(penguin, 30, 200, 50, 25, null);
+		g.drawImage(skunk, 30, 200, 50, 25, null);
+		g.drawImage(panda, 30, 200, 50, 26, null);
+		g.drawImage(squid, 30, 200, 50, 26, null);
+		
+		//places
+		g.drawImage(france, 30, 200, 50, 26, null);
+		g.drawImage(athens, 30, 200, 50, 26, null);
+		g.drawImage(rome, 30, 200, 50, 26, null);
+		g.drawImage(louisiana, 30, 200, 50, 26, null);
+		g.drawImage(guatemala, 30, 200, 50, 26, null);
+		
+		//basic words
+		g.drawImage(yeet, 30, 200, 50, 26, null);
+		g.drawImage(oop, 30, 200, 50, 26, null);
+		g.drawImage(sksksk, 30, 200, 50, 26, null);
 	}
 
 }
