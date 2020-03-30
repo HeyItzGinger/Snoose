@@ -7,6 +7,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
@@ -28,26 +29,25 @@ public class Screen extends JPanel{
 	hints = new HashMap<String, ArrayList<String>>();
 	
 	//animals
-	Image frog = ImageIO.read(this.getClass().getResourceAsStream(frog.jpeg)); 
-	Image penguin = ImageIO.read(this.getClass().getResourceAsStream(penguin.jpeg)); 
-	Image skunk = ImageIO.read(this.getClass().getResourceAsStream(skunk.jpeg)); 
-	Image panda = 
-	Image squid = 
+	Image frog = ImageIO.read(this.getClass().getResourceAsStream(frog.jpeg));
+	Image penguin = ImageIO.read(this.getClass().getReasourceAsStream(penguin.jpeg));
+	Image skunk = ImageIO.read(this.getClass().getResourceAsStream(skunk.jpeg));
+	Image panda = ImageIO.read(this.getClass().getResourceAsStream(panda.jpeg));
+	Image squid = ImageIO.read(this.getClass().getResourceAsStream(squid.jpeg));
 	
 	//places
-	Image france = 
-	Image athens = 
-	Image rome = 
-	Image louisiana = 
-	Image gutemala = 
-
-	//basic words
-	Image yeet = 
-	Image oop = 
-	Image sksksk = 
-	Image ily = 
-	Image tea = 
+	Image france = ImageIO.read(this.getClass().getResourceAsStream(france.jpeg));
+	Image athens = ImageIO.read(this.getClass().getResourceAsStream(athens.jpeg));
+	Image rome = ImageIO.read(this.getClass().getResourceAsStream(rome.jpeg));	
+	Image louisiana = ImageIO.read(this.getClass().getResourceAsStream(louisiana.jpeg));
+	Image guatemala = ImageIO.read(this.getClass().getResourceAsStream(guatemala.jpeg)));
 	
+	//basic words
+	Image yeet = ImageIO.read(this.getClass().getResourceAsStream(yeet.jpeg));
+	Image oop = ImageIO.read(this.getClass().getResourceAsStrea(oop.jpeg));
+	Image sksksk = ImageIO.read(this.getClass().getResourceAsStream(hydroflask.jpg));
+	Image ily = ImageIO.read(this.getClass().getResourceAsStream(heart.png));
+	Image tea = ImageIO.read(this.getClass().getResourceAsStream(tea.jpeg));
 	
 	
 public Screen(JFrame frame) {
