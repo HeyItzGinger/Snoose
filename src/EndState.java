@@ -28,12 +28,12 @@ public class EndState extends Screen {
 		gc.gridy = 0;
 		this.add(label, gc);
 		label.setFont(new Font("Impact", Font.BOLD, 125));
-		label.setText("GAME OVER");
+		label.setText("GAME OVER!!");
 		gc.gridx = 0;
 		gc.gridy = 1;
 		this.add(label2, gc);
 		label2.setFont(new Font("Impact", Font.PLAIN, 90));
-		label2.setText("The word was " + GameState.getAnswer() + "");
+		label2.setText("The word was " + GameState.getAnswer() + "!");
 		gc.gridx = 0;
 		gc.gridy = 2;
 		this.add(label3, gc);
@@ -44,24 +44,59 @@ public class EndState extends Screen {
 	}
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		//animals 
-		g.drawImage(frog, 30, 200, 50, 25, null);
-		g.drawImage(penguin, 30, 200, 50, 25, null);
-		g.drawImage(skunk, 30, 200, 50, 25, null);
-		g.drawImage(panda, 30, 200, 50, 26, null);
-		g.drawImage(squid, 30, 200, 50, 26, null);
+		
+		//animals
+		if (GameState.secretWrd.equals("frog")) {
+			g.drawImage(frog, 100, 100, 200, 200, null);
+		}
+		if (GameState.secretWrd.equals("penguin")) {
+			g.drawImage(penguin, 100, 100, 300, 200, null);	
+		}
+		if (GameState.secretWrd.equals("skunk")) {
+			g.drawImage(skunk, 100, 100, 200, 200, null);
+		}
+		if (GameState.secretWrd.equals("panda")) {
+			g.drawImage(panda, 100, 100, 200, 200, null);
+		}
+		if (GameState.secretWrd.equals("squid")) {
+			g.drawImage(squid, 100, 100, 200, 200, null);	
+		}
 		
 		//places
-		g.drawImage(france, 30, 200, 50, 26, null);
-		g.drawImage(athens, 30, 200, 50, 26, null);
-		g.drawImage(rome, 30, 200, 50, 26, null);
-		g.drawImage(louisiana, 30, 200, 50, 26, null);
-		g.drawImage(guatemala, 30, 200, 50, 26, null);
+		if (GameState.secretWrd.equals("france")) {
+			g.drawImage(france, 100, 100, 100, 100, null);
+		}
+		if (GameState.secretWrd.equals("athens")) {
+			g.drawImage(athens, 100, 100, 100, 100, null);
+		}
+		if (GameState.secretWrd.equals("rome")) {
+			g.drawImage(rome, 100, 100, 100, 100, null);
+		}
+		if (GameState.secretWrd.equals("louisiana")) {
+			g.drawImage(louisiana, 100, 100, 100, 100, null);
+		}
+		if (GameState.secretWrd.equals("guatemala")) {
+			g.drawImage(guatemala, 100, 100, 100, 100, null);
+		}
 		
 		//basic words
-		g.drawImage(yeet, 30, 200, 50, 26, null);
-		g.drawImage(oop, 30, 200, 50, 26, null);
-		g.drawImage(sksksk, 30, 200, 50, 26, null);
+		if (GameState.secretWrd.equals("yeet")) {
+			g.drawImage(yeet, 30, 200, 50, 26, null);
+		}
+		if (GameState.secretWrd.equals("oop")) {
+			g.drawImage(oop, 30, 200, 50, 26, null);
+		}
+		if (GameState.secretWrd.equals("sksksk")){
+			g.drawImage(sksksk, 30, 200, 50, 26, null);
+		}
+		if (GameState.secretWrd.equals("ily")) {
+			g.drawImage(ily, 30, 200, 50, 26, null);
+		}
+		if (GameState.secretWrd.equals("tea")) {
+			g.drawImage(tea, 30, 200, 50, 26, null) ;
+		}
+		
+		
 	}
 
 }

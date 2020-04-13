@@ -29,6 +29,7 @@ public class Screen extends JPanel{
 	HashMap<String, ArrayList<String>>
 	hints = new HashMap<String, ArrayList<String>>();
 	
+	
 	//animals
 	Image frog;
 	Image penguin;
@@ -90,7 +91,7 @@ public Screen(JFrame frame) {
 	//basic images
 	yeet = ImageIO.read(this.getClass().getResourceAsStream("yeet.jpeg"));
 	oop = ImageIO.read(this.getClass().getResourceAsStream("oop.jpeg"));
-	sksksk = ImageIO.read(this.getClass().getResourceAsStream("hydroflask.jpg"));
+	sksksk = ImageIO.read(this.getClass().getResourceAsStream("hydroflask2.jpeg"));
 	ily = ImageIO.read(this.getClass().getResourceAsStream("heart.png"));
 	tea = ImageIO.read(this.getClass().getResourceAsStream("tea.jpeg"));
 	} catch(IOException e) {e.printStackTrace();}

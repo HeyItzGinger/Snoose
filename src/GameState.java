@@ -79,6 +79,7 @@ public class GameState extends Screen implements ActionListener, MouseListener {
 		submit.addActionListener(this);
 
 		secretWrd = category[wrdLength];
+		
 
 		answer = new char[secretWrd.length()];
 
