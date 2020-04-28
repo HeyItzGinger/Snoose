@@ -47,16 +47,16 @@ public class EndState extends Screen {
 		
 		//animals
 		if (GameState.secretWrd.equals("frog")) {
-			g.drawImage(frog, 100, 100, 200, 200, null);
+			g.drawImage(frog, 100, 100, 200, 100, null);
 		}
 		if (GameState.secretWrd.equals("penguin")) {
-			g.drawImage(penguin, 100, 100, 300, 200, null);	
+			g.drawImage(penguin, 100, 100, 200, 100, null);	
 		}
 		if (GameState.secretWrd.equals("skunk")) {
-			g.drawImage(skunk, 100, 100, 200, 200, null);
+			g.drawImage(skunk, 100, 100, 200, 150, null);
 		}
 		if (GameState.secretWrd.equals("panda")) {
-			g.drawImage(panda, 100, 100, 200, 200, null);
+			g.drawImage(panda, 100, 100, 200, 100, null);
 		}
 		if (GameState.secretWrd.equals("squid")) {
 			g.drawImage(squid, 100, 100, 200, 200, null);	
@@ -64,36 +64,36 @@ public class EndState extends Screen {
 		
 		//places
 		if (GameState.secretWrd.equals("france")) {
-			g.drawImage(france, 100, 100, 100, 100, null);
+			g.drawImage(france, 100, 100, 180, 180, null);
 		}
 		if (GameState.secretWrd.equals("athens")) {
-			g.drawImage(athens, 100, 100, 100, 100, null);
+			g.drawImage(athens, 100, 100, 180, 180, null);
 		}
 		if (GameState.secretWrd.equals("rome")) {
-			g.drawImage(rome, 100, 100, 100, 100, null);
+			g.drawImage(rome, 100, 100, 180, 180, null);
 		}
 		if (GameState.secretWrd.equals("louisiana")) {
-			g.drawImage(louisiana, 100, 100, 100, 100, null);
+			g.drawImage(louisiana, 100, 100, 180, 180, null);
 		}
 		if (GameState.secretWrd.equals("guatemala")) {
-			g.drawImage(guatemala, 100, 100, 100, 100, null);
+			g.drawImage(guatemala, 100, 100, 180, 180, null);
 		}
 		
 		//basic words
 		if (GameState.secretWrd.equals("yeet")) {
-			g.drawImage(yeet, 30, 200, 50, 26, null);
+			g.drawImage(yeet, 100, 100, 280, 180, null);
 		}
 		if (GameState.secretWrd.equals("oop")) {
-			g.drawImage(oop, 30, 200, 50, 26, null);
+			g.drawImage(oop, 100, 100, 200, 150, null);
 		}
 		if (GameState.secretWrd.equals("sksksk")){
-			g.drawImage(sksksk, 30, 200, 50, 26, null);
+			g.drawImage(sksksk, 100, 100, 180, 180, null);
 		}
 		if (GameState.secretWrd.equals("ily")) {
-			g.drawImage(ily, 30, 200, 50, 26, null);
+			g.drawImage(ily, 100, 100, 180, 180, null);
 		}
 		if (GameState.secretWrd.equals("tea")) {
-			g.drawImage(tea, 30, 200, 50, 26, null) ;
+			g.drawImage(tea, 100, 100, 200, 100, null) ;
 		}
 		
 		
