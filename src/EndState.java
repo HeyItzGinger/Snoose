@@ -2,11 +2,13 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class EndState extends Screen {
+public class EndState extends Screen implements KeyListener {
 	JLabel label;
 	JLabel label2;
 	JLabel label3;
@@ -28,7 +30,7 @@ public class EndState extends Screen {
 		gc.gridy = 0;
 		this.add(label, gc);
 		label.setFont(new Font("Impact", Font.BOLD, 125));
-		label.setText("GAME OVER!!");
+		label.setText("GAME OVER!! Press any key if you want to replay!");
 		gc.gridx = 0;
 		gc.gridy = 1;
 		this.add(label2, gc);
@@ -40,7 +42,10 @@ public class EndState extends Screen {
 		label3.setFont(new Font("Impact", Font.PLAIN, 40));
 		//label3.setText("Press any key if you'd like to restart");
 		this.repaint();
+		frame.addKeyListener(this);
+		frame.requestFocus();
 		frame.pack();
+		
 	}
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -96,6 +101,26 @@ public class EndState extends Screen {
 			g.drawImage(tea, 100, 100, 200, 100, null) ;
 		}
 		
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		GamePanel.state = GamePanel.MENU;
+		GamePanel.selectScreen();
+		System.out.println("replayed");
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 

@@ -51,6 +51,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 		drawMenu();
 		
 		timer.start();
+		
 	}
 	public void paintCompnent(Graphics g) {
 		g.drawString("" + GamePanel.counter, 0, 0);
@@ -120,6 +121,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 		if (state == END) {
 			end.removeScreen();
 			System.out.println("pressed");
+			
 		}
 		
 	
@@ -154,11 +156,14 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 			else {
 				
 			}
+			
+				
+			}
 		}
 		
 		
 	
 		
-	}
+	
 
 

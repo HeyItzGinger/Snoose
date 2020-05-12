@@ -59,8 +59,8 @@ public void drawMenuScreen() {
 	addJComponent(label,0, 1, 1, 0);
 	//panel.add(label, gc);
 	
-	label2.setFont(new Font("DIN Condensed", Font.PLAIN, 70));
-	label2.setText("Press any key to continue");
+	label2.setFont(new Font("DIN Condensed", Font.PLAIN, 30));
+	label2.setText("Press any key to continue (when you play, click the girl for hints!)");
 	gc.gridx = 0;
 	gc.gridy = 2;
 	gc.weightx = 1;

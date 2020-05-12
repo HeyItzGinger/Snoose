@@ -158,14 +158,6 @@ public Screen(JFrame frame) {
 	hints.get("tea").add("Mostly used by girls");
 	hints.get("tea").add("Spill the '___'");
 	
-//	for(int p = 0; p < plaWrds.length; p++) {
-//		ArrayList<String> x = new ArrayList <String>();
-//		hints.put(plaWrds[p], x);
-//	}
-//	for(int b = 0; b < basWrds.length; b++) {
-//		ArrayList<String> y = new ArrayList<String>();
-//		hints.put(basWrds[b], y);
-//	}
 	
 	}
 public JLabel createLabelImage(String file) {
