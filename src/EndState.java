@@ -29,7 +29,7 @@ public class EndState extends Screen implements KeyListener {
 		gc.gridx = 0;
 		gc.gridy = 0;
 		this.add(label, gc);
-		label.setFont(new Font("Impact", Font.BOLD, 125));
+		label.setFont(new Font("Impact", Font.BOLD, 50));
 		label.setText("GAME OVER!! Press any key if you want to replay!");
 		gc.gridx = 0;
 		gc.gridy = 1;

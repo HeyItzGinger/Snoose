@@ -37,9 +37,11 @@ JButton basicTerms;
 
 public void drawMenuScreen() {
 	frame.add(this);
+	if (animals.getListeners(ActionListener.class).length == 0) {
 	animals.addActionListener(this);
 	places.addActionListener(this);
 	basicTerms.addActionListener(this);
+	}
 	animals.setFocusable(false);
 	places.setFocusable(false);
 	basicTerms.setFocusable(false);

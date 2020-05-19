@@ -80,7 +80,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 	}
 	
 	public static void selectScreen() {
-		
+		System.out.println("switching to" + currentScreen);
 		if(currentScreen != null) {
 			currentScreen.removeScreen();
 		}
